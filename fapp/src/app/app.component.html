@@ -1,0 +1,24 @@
+<!--
+‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹
+ fapp entry point
+››››››››››››››››››
+ -->
+
+<!-- root container (necessary for ngMaterial SideNav) -->
+<mat-sidenav-container>
+
+  <!--sidenav content-->
+  <mat-sidenav #nav
+               [fixedInViewport]="true"
+               [fixedTopGap]="0"
+               [fixedBottomGap]="0">
+    <fapp-sidenav></fapp-sidenav>
+  </mat-sidenav>
+
+  <!-- fapp content-->
+  <mat-sidenav-content>
+    <fapp-header></fapp-header>
+    <router-outlet></router-outlet>
+    <fapp-footer></fapp-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
