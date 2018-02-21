@@ -40,7 +40,7 @@ public class CompanyRegistrationController {
 
 
     @RequestMapping(value = "/companies", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getCompanies(@Valid @ModelAttribute CompanyVO requestVO) throws JsonProcessingException {
+    public String getCompanies() throws JsonProcessingException {
         Iterable<Company> companies = companyRepository.findAll();
         List<Company> target = new ArrayList<>();
         companies.forEach(target::add);
