@@ -1,34 +1,29 @@
-package com.mover.mover.objects;
+package com.mover.mover.vo;
  
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.Valid;
+import java.io.Serializable;
 
-@Entity
-public class Company {
- 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
- 
+public class CompanyVO implements Serializable{
+
+    @NotBlank
     private String companyName;
 
+    @NotBlank
     @Email
     private String emailAddress;
 
+    @NotBlank
     private String phoneNumber;
 
     private String marketingDescription;
 
     private String nonOperationalDays;
-
-    public long getId() {
-        return id;
-    }
 
     public String getCompanyName() {
         return companyName;
